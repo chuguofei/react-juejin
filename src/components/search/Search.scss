@@ -1,0 +1,186 @@
+@import '../../style/var.scss';
+
+.top-search {
+    width: 100%;
+    height: 180px;
+    background: $primary-var;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .search-input-box {
+        display: flex;
+        align-items: center;
+        width: 30%;
+        height: 40px;
+        background-color: #fff;
+        margin: 20px auto;
+        border-radius: 5px;
+
+        .search-engine {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            .icon-logo {
+                width: 30px;
+                height: 30px;
+            }
+
+            .icon-cls {
+                color: #ccc;
+                font-size: 20px;
+                margin: 0 5px;
+                cursor: pointer;
+            }
+        }
+
+        .input-wapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            input {
+                flex: 1;
+                outline: none;
+                border: 0;
+                font-size: 15px;
+                font-weight: 200;
+                color: #1d2129;
+
+                &::placeholder {
+                    color: #ccc;
+                    font-weight: 200;
+                }
+            }
+
+            .clear {
+                margin: 0 10px;
+                color: #ccc;
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+
+    .quick-nav {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+
+        .title {
+            margin-right: 10px;
+            color: #fff;
+        }
+
+        .nav-list {
+            li.nav-item {
+                float: left;
+                margin-right: 10px;
+                height: 30px;
+                line-height: 30px;
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    background-color: rgba(255, 255, 255, 0.37);
+                    border-radius: 50px;
+                    padding-right: 5px;
+                }
+                img {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100%;
+                    background-color: #ccc;
+                    margin: 0 5px;
+                }
+                .lableName {
+                    display: inline-block;
+                    font-size: 14px;
+                    color: #fff;
+                }
+            }
+
+            ::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+        }
+    }
+}
+
+.search-choose-dialog {
+    position: relative;
+    left: 0;
+    top: 0;
+
+    .bg-conver {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+        transition: all 0.5s ease-in;
+    }
+
+    .search-list {
+        position: fixed;
+        z-index: 2001;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 3px;
+        animation: searchAnim 0.5s ease;
+        li {
+            float: left;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            margin: 10px;
+
+            &.engine-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .engine-name{
+                font-size: 13px;
+                margin-top: 5px;
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            &:hover {
+                background-color: #e8f3ff;
+
+                .engine-name {
+                    color: $primary-var;
+                }
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+}
+
+@keyframes searchAnim {
+    from {
+        transform: translateX(-100%);
+    }
+}

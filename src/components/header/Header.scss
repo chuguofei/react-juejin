@@ -1,0 +1,119 @@
+@import '../../style/var.scss';
+
+.my-header-container {
+    padding: 0 20px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    > div {
+        display: flex;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+
+        .item {
+            margin: 0 20px;
+        }
+
+        .logo-img {
+            width: 130px;
+        }
+    }
+
+    .header-select-warpper {
+        flex: 1;
+        justify-content: flex-end;
+
+        .language-box {
+            display: flex;
+            align-items: center;
+            width: 120px;
+            margin-right: 20px;
+            height: 30px;
+            border-radius: 3px;
+            background: $primary-var;
+            color: #fff;
+            cursor: pointer;
+            .language {
+                flex: 1;
+                text-align: center;
+                font-size: 12px;
+                letter-spacing: 1px;
+                + span {
+                    height: 100%;
+                    width: 20px;
+                    line-height: 30px;
+                    text-align: center;
+                    padding: 3px;
+                    border-left: 1px #fff solid;
+                }
+            }
+
+            + .language-drop-down {
+                width: 120px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 5px #ccc;
+                animation: languageDown 0.3s ease-in-out;
+                z-index: 99;
+
+                li {
+                    height: 30px;
+                    margin: 10px;
+                    text-align: center;
+                    cursor: pointer;
+                    color: #86909c;
+                    line-height: 30px;
+                    font-size: 14px;
+                    &:hover {
+                        background: #e8f3ff;
+                        color: $primary-var;
+                    }
+                }
+            }
+
+            @keyframes languageDown {
+                from {
+                    height: 0;
+                    opacity: 0;
+                }
+                to {
+                    height: auto;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+
+        .handle-icon {
+            color: $primary-var;
+            font-size: 22px;
+            margin: 0 8px 0;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .user-photo {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+}
