@@ -1,0 +1,17 @@
+.my-body-container {
+    width: 100%;
+    height: calc(100vh - 240px);
+    border: 1px red solid;
+    display: flex;
+
+    .center-module {
+        flex: 1;
+        background-color: green;
+    }
+    .left-module,
+    .right-module {
+        min-width: 300px;
+        height: 100%;
+        border: 1px blue solid;
+    }
+}
